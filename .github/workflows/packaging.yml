@@ -21,6 +21,8 @@ jobs:
       - name: Prepare Environment
         run: echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
 
+      - run: "make"
+
       - name: Package Source
         run: |
           mkdir -p build/source
@@ -49,6 +51,8 @@ jobs:
 
       - name: Prepare Environment
         run: echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
+
+      - run: "make"
 
       - name: Package AppImages
         run: |
@@ -79,6 +83,8 @@ jobs:
 
       - name: Prepare Environment
         run: echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
+
+      - run: "make"
 
       - name: Package Disk Image
         env:
